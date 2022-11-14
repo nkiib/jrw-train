@@ -10,12 +10,12 @@ def end():
     print('入力された値が不正です。')
     sys.exit()
 
-htmlout = []
-delay_info = []
-direct0 = []
-direct1 = []
-d0_for = []
-d1_for = []
+htmlout = [] # HTMLに出力するためのリスト
+delay_info = [] # 遅れ情報を出力するためのリスト
+direct0 = [] # 向きごとに分けるためのリスト（上り）
+direct1 = [] # 向きごとに分けるためのリスト（下り）
+d0_for = [] # 表の名前を出すためのリスト（上り）
+d1_for = [] # 表の名前を出すためのリスト（下り）
 def output(line_name):
     lineout = []
     #路線入力の取得とデータの取得
@@ -141,5 +141,4 @@ def output(line_name):
         oh.html_fix(lineout,line_name,line_name,delay_info)
         chain = 1
 
-    # oh.html_fix(htmlout,line_name,'al',delay_info)
     oh.direc_fix(direct0,direct1,line_name,'allout',delay_info,d0_for,d1_for)
