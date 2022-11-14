@@ -1,0 +1,6 @@
+/__pycache__
+*.command
+*.html
+/save_html
+matome.py
+*.ftp
