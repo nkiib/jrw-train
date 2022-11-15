@@ -4,3 +4,4 @@
 /save_html
 matome.py
 *.ftp
+.DS_Store
