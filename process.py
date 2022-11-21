@@ -14,8 +14,8 @@ htmlout = [] # HTMLに出力するためのリスト
 delay_info = [] # 遅れ情報を出力するためのリスト
 direct0 = [] # 向きごとに分けるためのリスト（上り）
 direct1 = [] # 向きごとに分けるためのリスト（下り）
-d0_for = [] # 表の名前を出すためのリスト（上り）
-d1_for = [] # 表の名前を出すためのリスト（下り）
+direction0_goto = [] # 表の名前を出すためのリスト（上り）
+direction1_goto = [] # 表の名前を出すためのリスト（下り）
 def output(line_name):
     lineout = []
     #路線入力の取得とデータの取得
@@ -106,7 +106,9 @@ def output(line_name):
         if '快' in TrainType or '新快' in TrainType or '紀州' in TrainType:
             TrainType = '<span id="blue">' + TrainType 
         elif '特急' in TrainType:
-            TrainType = '<span id="red">' + TrainType  
+            TrainType = '<span id="red">' + TrainType
+        elif '観光' in TrainType:
+            TrainType = '<span id="green">' + TrainType 
 
         if nick_flag == 1:
             TrainType += '<br><small>' + nick_name + '</small>'
@@ -120,10 +122,10 @@ def output(line_name):
         raw_object = '\t\n<tr><td>' + line_name + '</td>' + TrainNumber + '<td>' + Direction + '</td><td>' + TrainType + '</td><td>' + goto + '</td>' + delay + '<td>' + car + '</td><td>' + position + '</td><td>' + posi2  +'</td></tr>'
         
         if item['direction'] == 0:
-            d0_for.append(goto)
+            direction0_goto.append(goto)
             direct0.append(raw_object)
         elif item['direction'] == 1:
-            d1_for.append(goto)
+            direction1_goto.append(goto)
             direct1.append(raw_object)
         
 
@@ -141,4 +143,4 @@ def output(line_name):
         oh.html_fix(lineout,line_name,line_name,delay_info)
         chain = 1
 
-    oh.direc_fix(direct0,direct1,line_name,'allout',delay_info,d0_for,d1_for)
+    oh.direc_fix(direct0,direct1,line_name,'allout',delay_info,direction0_goto,direction1_goto)
