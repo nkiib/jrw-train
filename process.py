@@ -80,7 +80,7 @@ def output(line_name):
         trt = TrainType
         delay = str(item['delayMinutes']) + '分'
 
-        print('路線：' + line_name + '\t列車：' + TrainNumber + '\t列車名：' + nick_name +'\t向き：' + Direction + '\t種別：' + TrainType + '\t行先：' +  goto + '\t遅れ：' + delay + '遅れ\t' + car + '\t' + position + ' と ' + posi2) 
+        # print('路線：' + line_name + '\t列車：' + TrainNumber + '\t列車名：' + nick_name +'\t向き：' + Direction + '\t種別：' + TrainType + '\t行先：' +  goto + '\t遅れ：' + delay + '遅れ\t' + car + '\t' + position + ' と ' + posi2) 
         
         #遅延レベルによる色分け
         if item['delayMinutes'] > 60:

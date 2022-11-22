@@ -4,7 +4,7 @@ from itertools import zip_longest
 import pandas_datareader.data as pdr
 
 def output_html(filename , str1 ,filetype): # 出力処理
-    path1 = os.path.dirname(__file__) + "/" 
+    path1 = os.path.dirname(__file__) + "/html/" 
     file1 = path1 + filename + '.' +filetype
     write1( file1, str1 ) 
     #print(filename)
